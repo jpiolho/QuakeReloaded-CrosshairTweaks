@@ -1,0 +1,21 @@
+{
+  "ModId": "quakeenhanced.mod.crosshairtweaks",
+  "ModName": "CrosshairTweaks",
+  "ModAuthor": "JPiolho",
+  "ModVersion": "1.0.0",
+  "ModDescription": "Adds extra options to customize your crosshair",
+  "ModDll": "CrosshairTweaks.dll",
+  "ModIcon": "Preview.png",
+  "ModR2RManagedDll32": "x86/CrosshairTweaks.dll",
+  "ModR2RManagedDll64": "x64/CrosshairTweaks.dll",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "CrosshairTweaks.ReleaseMetadata.json",
+  "PluginData": {},
+  "IsUniversalMod": false,
+  "ModDependencies": [ "reloaded.sharedlib.hooks", "quakeenhanced.mod.quakereloaded", "Reloaded.Memory.SigScan.ReloadedII" ],
+  "OptionalDependencies": [],
+  "SupportedAppId": [ "quake_x64_steam.exe" ],
+  "ProjectUrl": ""
+}
