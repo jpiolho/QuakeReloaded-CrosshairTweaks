@@ -1,5 +1,5 @@
 # CrosshairTweaks
-<p align="center">An engine mod for Quake Enhanced that extra customization to your crosshair</p>
+<p align="center">An engine mod for Quake Enhanced that extra adds customization to your crosshair</p>
 <p align="center">This mod uses <a href="https://github.com/Reloaded-Project/Reloaded-II">Reloaded-II</a> and <a href="https://github.com/jpiolho/QuakeReloaded">QuakeReloaded</a></p>
 <p align="center"><img width="256" height="256" alt="Logo" src="https://github.com/jpiolho/QuakeReloaded-CrosshairTweaks/blob/main/CrosshairTweaks/Preview.png"></p>
 
