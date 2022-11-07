@@ -44,6 +44,8 @@ namespace CrosshairTweaks
 
         private unsafe float* _valueAlpha, _valueSize;
 
+        private IQuakeCallbackReference _onPreInitialize;
+
         public Mod(ModContext context)
         {
             _modLoader = context.ModLoader;
@@ -63,15 +65,18 @@ namespace CrosshairTweaks
             if (!_modLoader.GetController<IQuakeReloaded>().TryGetTarget(out var qreloaded))
                 throw new Exception("Could not get QuakeReloaded API. Are you sure QuakeReloaded is loaded before this mod?");
 
-            qreloaded.Events._EXPERIMENTAL_RegisterOnInitialized(() =>
+            _onPreInitialize = qreloaded.Events.RegisterOnPreInitialize(() =>
             {
                 _cvarAlpha = qreloaded.Cvars.Register("crosshair_alpha", "1.0f", "How transparent the crosshair is", CvarFlags.Float | CvarFlags.Saved, 0f, 1f);
                 _cvarSize = qreloaded.Cvars.Register("crosshair_size", "0.0f", "How big the crosshair is", CvarFlags.Float | CvarFlags.Saved, 0.0f, 10f);
-                
+            });
+
+            qreloaded.Events.RegisterOnInitialized(() =>
+            {
                 qreloaded.Console.PrintLine("CrosshairTweaks initialized", 0, 255, 0);
             });
 
-            qreloaded.Events._EXPERIMENTAL_RegisterOnRenderFrame(() =>
+            qreloaded.Events.RegisterOnRenderFrame(() =>
             {
                 unsafe
                 {
