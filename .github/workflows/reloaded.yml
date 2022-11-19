@@ -22,6 +22,7 @@ env:
   PUBLISH_PATH: ./Publish
   
   CSPROJ_PATH: ./CrosshairTweaks/CrosshairTweaks.csproj
+  MODCONFIG_PATH: ./CrosshairTweaks/ModConfig.json
   RELOADEDII_PACKAGENAME: CrosshairTweaks
   
   RELOADEDIIMODS: .
@@ -43,6 +44,11 @@ jobs:
         with:
           fetch-depth: 0
           submodules: 'recursive'
+          lfs: true
+      
+      # Checkout LFS objects
+      - name: Checkout LFS objects
+        run: git lfs checkout
       
       # Install .NET
       - name: Setup .NET
@@ -68,7 +74,13 @@ jobs:
           else {
               auto-changelog --sort-commits date --hide-credit --template compact --commit-limit false --unreleased --output "$env:PUBLISH_CHANGELOG_PATH"
           }
-          
+    
+      - name: "Set mod version in ModConfig.json"
+        run: |
+            $json = ConvertFrom-Json (Get-Content "$env:MODCONFIG_PATH" | Out-String)
+            $json.ModVersion = "$env:RELEASE_TAG"
+            ConvertTo-Json $json -Compress | Out-File "$env:MODCONFIG_PATH"
+            
       - name: Build mod
         run: |
           ./Publish.ps1 `
