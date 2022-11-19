@@ -9,5 +9,4 @@ This mods adds a couple new cvars to allow you to customize the crosshair size (
 
 # How to install
 1. Download and install [Reloaded-II](https://github.com/Reloaded-Project/Reloaded-II) if you don't have it
-2. Install [QuakeReloaded](https://github.com/jpiolho/QuakeReloaded) mod if you don't have it
-3. Download the latest version of CrosshairTweaks at the [releases](https://github.com/jpiolho/QuakeReloaded-CrosshairTweaks/releases) page
+2. [**Click here**](https://jpiolho.github.io/QuakeReloaded/installmod.html?username=jpiolho&repo=QuakeReloaded-CrosshairTweaks&file=CrosshairTweaks{tag}.7z&latestVersion=1)
