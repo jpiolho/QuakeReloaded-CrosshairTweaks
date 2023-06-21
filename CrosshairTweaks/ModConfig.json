@@ -59,7 +59,8 @@
   ],
   "OptionalDependencies": [],
   "SupportedAppId": [
-    "quake_x64_steam.exe"
+    "quake_x64_steam.exe",
+    "quake_shipping_playfab_gog_x64.exe"
   ],
   "ProjectUrl": "https://github.com/jpiolho/QuakeReloaded-CrosshairTweaks"
 }

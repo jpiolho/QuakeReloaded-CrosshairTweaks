@@ -95,7 +95,11 @@ namespace CrosshairTweaks
                 *_valueSize = 0.0f;
             }
 
-            scanner.AddMainModuleScan("F3 44 0F 11 44 24 ?? F3 0F 11 7C 24 ?? F3 0F 11 74 24 ?? F3 44 0F 11 4C 24 ??", (result) =>
+            scanner.AddMainModuleScan(qreloaded.Game.Platform switch
+            {
+                Platform.GOG => "F3 44 0F 11 44 24 ?? F3 0F 11 7C 24 ?? F3 0F 11 74 24 ?? F3 44 0F 11 54 24 ??",
+                _ => "F3 44 0F 11 44 24 ?? F3 0F 11 7C 24 ?? F3 0F 11 74 24 ?? F3 44 0F 11 4C 24 ??"
+            }, (result) =>
             {
                 var offset = mainModule.BaseAddress + result.Offset;
 
@@ -106,7 +110,12 @@ namespace CrosshairTweaks
                         $"use64",
                         $"push rax",
 
-                        $"movss xmm9, dword [qword 0x{new IntPtr(_valueAlpha):x}]",
+                        // Set the alpha
+                        qreloaded.Game.Platform switch
+                        {
+                            Platform.GOG => $"movss xmm10, dword [qword 0x{new IntPtr(_valueAlpha):x}]",
+                            _ => $"movss xmm9, dword [qword 0x{new IntPtr(_valueAlpha):x}]",
+                        },
 
                         //Push xmm1
                         $"sub esp, 32",
