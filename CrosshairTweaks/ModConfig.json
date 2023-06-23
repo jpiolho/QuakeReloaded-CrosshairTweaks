@@ -15,15 +15,6 @@
   "PluginData": {
     "GitHubDependencies": {
       "IdToConfigMap": {
-        "reloaded.sharedlib.hooks": {
-          "Config": {
-            "UserName": "Reloaded.SharedLib.Hooks.ReloadedII",
-            "RepositoryName": "Sewer56",
-            "UseReleaseTag": true,
-            "AssetFileName": "reloaded.sharedlib.hooks.zip"
-          },
-          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
-        },
         "quakeenhanced.mod.quakereloaded": {
           "Config": {
             "UserName": "jpiolho",
@@ -35,12 +26,21 @@
         },
         "Reloaded.Memory.SigScan.ReloadedII": {
           "Config": {
-            "UserName": "Reloaded.Memory.SigScan",
-            "RepositoryName": "Reloaded-Project",
+            "UserName": "Reloaded-Project",
+            "RepositoryName": "Reloaded.Memory.SigScan",
             "UseReleaseTag": false,
             "AssetFileName": "Mod.zip"
           },
           "ReleaseMetadataName": "Reloaded.Memory.SigScan.ReloadedII.ReleaseMetadata.json"
+        },
+        "reloaded.sharedlib.hooks": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "Reloaded.SharedLib.Hooks.ReloadedII",
+            "UseReleaseTag": true,
+            "AssetFileName": "reloaded.sharedlib.hooks.zip"
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
         }
       }
     },
